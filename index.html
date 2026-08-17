@@ -1,0 +1,568 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#FEFEF2">
+
+  <title>PLAY TOGETHER · 聯機桌遊</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+<header class="site-nav">
+  <a class="brand" href="#top" aria-label="Play Together">
+    <span class="brand-mark">P</span>
+    <span>PLAY<br>TOGETHER</span>
+  </a>
+
+  <nav>
+    <a href="#games">Games</a>
+    <a href="#how">How to play</a>
+    <a href="#about">About</a>
+  </nav>
+
+  <button class="nav-cta" data-scroll="#room">
+    PLAY
+  </button>
+</header>
+
+<main id="landing">
+
+  <!-- HERO -->
+  <section class="hero section">
+
+    <div class="hero-copy">
+
+      <div class="eyebrow">
+        LET THE GAMES BEGIN
+      </div>
+
+      <h1>
+        PLAY<br>
+        <span>TOGETHER.</span>
+      </h1>
+
+      <p>
+        兩款為朋友聚會設計的派對桌遊。
+        無需註冊，輸入暱稱和 6 位房間號，
+        直接透過 Cloudflare WebSocket 聯機。
+      </p>
+
+      <div class="hero-actions">
+
+        <button
+          class="btn btn-yellow"
+          data-scroll="#room"
+        >
+          CREATE A ROOM
+        </button>
+
+        <button
+          class="btn btn-outline"
+          data-scroll="#games"
+        >
+          EXPLORE GAMES
+        </button>
+
+      </div>
+
+      <div class="hero-note">
+        GitHub Pages · Cloudflare Durable Objects · WebSocket
+      </div>
+
+    </div>
+
+    <div class="hero-art" aria-hidden="true">
+
+      <div class="character">
+        <div class="ear left"></div>
+        <div class="ear right"></div>
+
+        <div class="head">
+          <span class="eye e1"></span>
+          <span class="eye e2"></span>
+          <span class="mouth"></span>
+          <span class="star">★</span>
+        </div>
+
+        <div class="body"></div>
+
+        <div class="arm arm-l"></div>
+        <div class="arm arm-r"></div>
+
+        <div class="leg leg-l"></div>
+        <div class="leg leg-r"></div>
+      </div>
+
+      <div class="speech-card">
+        <span>2–6 PLAYERS</span>
+        <strong>
+          ONE ROOM.<br>
+          LOTS OF CHAOS.
+        </strong>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- GAMES -->
+  <section id="games" class="section game-section">
+
+    <div class="section-head">
+
+      <div class="eyebrow">
+        CHOOSE YOUR GAME
+      </div>
+
+      <h2>
+        MEET THE <span>GAMES.</span>
+      </h2>
+
+      <p>
+        先選一款遊戲，再建立房間。
+        題庫會直接從 GitHub Pages 上的
+        <code>questions.json</code> 載入。
+      </p>
+
+    </div>
+
+
+    <div class="game-grid">
+
+      <article class="game-card blue-card">
+
+        <div class="sticker">
+          01
+        </div>
+
+        <div class="game-icon">
+          💭
+        </div>
+
+        <h3>
+          心有靈犀<br>
+          一點通
+        </h3>
+
+        <p>
+          二選一投票＋聊天。
+          十秒做決定，再看看大家真正怎麼想。
+        </p>
+
+        <div class="tag-row">
+          <span>VOTE</span>
+          <span>TALK</span>
+          <span>2–6</span>
+        </div>
+
+        <button
+          class="btn btn-light"
+          data-start="game1"
+        >
+          PLAY THIS GAME
+        </button>
+
+      </article>
+
+
+      <article class="game-card yellow-card">
+
+        <div class="sticker">
+          02
+        </div>
+
+        <div class="game-icon">
+          🎭
+        </div>
+
+        <h3>
+          9upper<br>
+          瞎掰王
+        </h3>
+
+        <p>
+          諗樣、老實人、9upper。
+          大家一齊解釋同一個詞，
+          得一個人知道真相。
+        </p>
+
+        <div class="tag-row">
+          <span>BLUFF</span>
+          <span>JUDGE</span>
+          <span>2–6</span>
+        </div>
+
+        <button
+          class="btn btn-dark"
+          data-start="game2"
+        >
+          PLAY THIS GAME
+        </button>
+
+      </article>
+
+    </div>
+
+  </section>
+
+
+  <!-- ROOM -->
+  <section id="room" class="section room-section">
+
+    <div class="room-panel">
+
+      <div class="room-visual">
+
+        <div class="mini-card">
+          WEBSOCKET
+        </div>
+
+        <div class="mini-card yellow">
+          SERVER SYNC
+        </div>
+
+        <div class="mini-card blue">
+          2–6 PLAYERS
+        </div>
+
+        <div class="orbit"></div>
+
+      </div>
+
+
+      <div class="room-form">
+
+        <div class="eyebrow">
+          LET'S GET STARTED
+        </div>
+
+        <h2>
+          CREATE OR <span>JOIN.</span>
+        </h2>
+
+
+        <div class="tabs">
+
+          <button
+            class="tab active"
+            data-tab="create"
+          >
+            CREATE ROOM
+          </button>
+
+          <button
+            class="tab"
+            data-tab="join"
+          >
+            JOIN ROOM
+          </button>
+
+        </div>
+
+
+        <!-- CREATE -->
+        <div
+          id="createTab"
+          class="tab-panel active"
+        >
+
+          <label>
+            你的暱稱
+
+            <input
+              id="createName"
+              maxlength="20"
+              placeholder="例如：小米"
+            >
+          </label>
+
+
+          <label>
+            遊戲
+
+            <select id="gameSelect">
+
+              <option value="game1">
+                心有靈犀一點通
+              </option>
+
+              <option value="game2">
+                9upper 瞎掰王
+              </option>
+
+            </select>
+
+          </label>
+
+
+          <div>
+
+            <div class="label-row">
+
+              <span>
+                題庫分類
+              </span>
+
+              <button
+                id="toggleCats"
+                class="text-btn"
+                type="button"
+              >
+                全選 / 取消全選
+              </button>
+
+            </div>
+
+
+            <div
+              id="catBox"
+              class="filter-box"
+            ></div>
+
+          </div>
+
+
+          <button
+            id="createBtn"
+            class="btn btn-yellow wide"
+          >
+            CREATE ROOM
+          </button>
+
+        </div>
+
+
+        <!-- JOIN -->
+        <div
+          id="joinTab"
+          class="tab-panel"
+        >
+
+          <label>
+            你的暱稱
+
+            <input
+              id="joinName"
+              maxlength="20"
+              placeholder="例如：阿哲"
+            >
+          </label>
+
+
+          <label>
+            房間號
+
+            <input
+              id="joinCode"
+              maxlength="6"
+              placeholder="例如：A7K9P2"
+              autocomplete="off"
+            >
+          </label>
+
+
+          <button
+            id="joinBtn"
+            class="btn btn-blue wide"
+          >
+            JOIN ROOM
+          </button>
+
+
+          <p class="notice">
+            只需要 6 位房間號。
+            不需要邀請資料、不需要 Answer。
+          </p>
+
+        </div>
+
+
+        <div
+          id="lobbyError"
+          class="status hidden"
+        ></div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- HOW -->
+  <section
+    id="how"
+    class="section how-section"
+  >
+
+    <div class="section-head">
+
+      <div class="eyebrow">
+        HOW IT WORKS
+      </div>
+
+      <h2>
+        THREE STEPS.<br>
+        <span>THAT'S IT.</span>
+      </h2>
+
+    </div>
+
+
+    <div class="steps">
+
+      <div class="step">
+        <b>01</b>
+        <h3>CHOOSE</h3>
+        <p>
+          選遊戲與題庫分類。
+        </p>
+      </div>
+
+      <div class="step">
+        <b>02</b>
+        <h3>ROOM CODE</h3>
+        <p>
+          房主建立房間，
+          玩家輸入同一個 6 位房間號。
+        </p>
+      </div>
+
+      <div class="step">
+        <b>03</b>
+        <h3>PLAY</h3>
+        <p>
+          Cloudflare Durable Object
+          管理房間、身份與倒計時。
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ABOUT -->
+  <section
+    id="about"
+    class="section about-section"
+  >
+
+    <div class="about-card">
+
+      <div class="eyebrow">
+        ABOUT
+      </div>
+
+      <h2>
+        PURE LIGHT.<br>
+        <span>GOOD VIBES.</span>
+      </h2>
+
+      <p>
+        Pure Light 作為底色，
+        Serenity Blue 與 Golden Custard
+        作為主要視覺點綴。
+      </p>
+
+      <div class="palette">
+
+        <span style="--c:#FEFEF2">
+          Pure Light
+        </span>
+
+        <span style="--c:#929FC1">
+          Serenity Blue
+        </span>
+
+        <span style="--c:#F2D965">
+          Golden Custard
+        </span>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</main>
+
+
+<!-- GAME ROOM -->
+<section
+  id="gameShell"
+  class="game-shell hidden"
+>
+
+  <div class="game-topbar">
+
+    <button
+      id="closeGame"
+      class="icon-btn"
+    >
+      ←
+    </button>
+
+    <div>
+
+      <span class="eyebrow">
+        ROOM
+      </span>
+
+      <strong id="roomLabel">
+        ------
+      </strong>
+
+    </div>
+
+    <div class="top-spacer"></div>
+
+    <div
+      class="peer-status"
+      id="connBadge"
+    >
+      CONNECTING
+    </div>
+
+  </div>
+
+
+  <div class="game-content">
+
+    <div
+      id="roomPanel"
+      class="panel"
+    ></div>
+
+    <div
+      id="gamePanel"
+      class="panel"
+    ></div>
+
+  </div>
+
+</section>
+
+
+<!-- VERY IMPORTANT:
+     config.js must load BEFORE app.js
+-->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="./config.js"></script>
+<script src="./app.js?v=11" defer></script>
+
+</body>
+</html>
