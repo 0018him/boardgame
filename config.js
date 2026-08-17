@@ -1,4 +1,4 @@
 window.PLAY_TOGETHER_CONFIG = {
-  SUPABASE_URL: "https://vwyiqpsnlxdmsthilrmn.supabase.co",
-  SUPABASE_ANON_KEY: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZ3eWlxcHNubHhkbXN0aGlscm1uIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODY4NTgyNjUsImV4cCI6MjEwMjQzNDI2NX0.ieWHtvY0YeR3wifB1XN8OYyfF8iR8QUlUr49KpOiVAM"
+  SUPABASE_URL: "https://sgvodnulqcjntffagfjb.supabase.co",
+  SUPABASE_ANON_KEY: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNndm9kbnVscWNqbnRmZmFnZmpiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODY5MzI0MzQsImV4cCI6MjEwMjUwODQzNH0.POrvKQKRU0BUXlcUFq0koquxnss9eIzP0sC5HPZM7HU"
 };
